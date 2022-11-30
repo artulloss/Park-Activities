@@ -1,0 +1,20 @@
+{
+  "name": "exam",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node ./server.cjs",
+    "serve": "cross-env NODE_ENV=production node ./server.cjs",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}

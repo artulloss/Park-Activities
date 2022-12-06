@@ -5,14 +5,31 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"
+    />
   </head>
   <body>
     <main>
-      <input type="search" name="" id="searchActivities">
-      <ul id="activities">
-
-      </ul>
+      <a class="hide-root" href="/">Back</a>
+      <table id="activities">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Parks</th>
+            <th>States</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </main>
     <script type="module" src="/src/main.ts"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
   </body>
 </html>

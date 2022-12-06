@@ -34,14 +34,15 @@ async function createServer(
 	if (url.indexOf("?") === -1) {
 		url += "?api_key=" + api_key;
 	} else { // Otherwise, add the api key with an ampersand
-		req.url = req.url + "&api_key=" + api_key;
+		url += "&api_key=" + api_key;
 	}
+	console.log(url);
 	const response = await fetch(url);
 	try {
 		const data = await response.json();
 		res.json(data);
-	} catch (error) {
-		console.log(error);
+	} catch (_) {
+		res.sendFile(__dirname + '/api-error.html');
 	}
   });
 

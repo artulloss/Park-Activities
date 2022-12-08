@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Park Activity Explorer</title>
     <link
       rel="stylesheet"
       href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"
@@ -12,13 +12,46 @@
   </head>
   <body>
     <main>
-      <a class="hide-root" href="/">Back</a>
-      <table id="activities">
+      <h1 class="show-activities">Activities</h1>
+      <a class="show-parks back-link" href="/">Back</a>
+      <h1 class="show-parks">Parks</h1>
+      <form id="refreshForm" class="show-activities">
+        <div class="form-group">
+          <label for="id">ID</label>
+          <input type="text" name="id" id="id" />
+        </div>
+        <div class="form-group">
+          <label for="q">Search</label>
+          <input type="text" name="q" id="q" />
+        </div>
+        <div class="form-group">
+          <label for="limit">Limit</label>
+          <input type="number" name="limit" id="limit" min="1"/>
+        </div>
+        <div class="form-group">
+          <label for="start">Start</label>
+          <input type="number" name="start" id="start" min="1" />
+        </div>
+        <input type="submit" value="Refresh" />
+      </form>
+      <table id="activities" class="show-activities">
         <thead>
           <tr>
             <th>Name</th>
             <th>Parks</th>
             <th>States</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <table id="parks" class="show-parks">
+        <thead>
+          <tr>
+            <!-- <th>States</th> -->
+            <th>Park Code</th>
+            <th>Designation</th>
+            <th>Full Name</th>
+            <th>Name</th>
           </tr>
         </thead>
         <tbody></tbody>

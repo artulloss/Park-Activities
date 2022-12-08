@@ -13,6 +13,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  --main-width: min(90vw, 1280px);
 }
 
 a {
@@ -24,7 +26,8 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+body,
+main {
   margin: 0;
   display: flex;
   place-items: center;
@@ -38,9 +41,9 @@ h1 {
 }
 
 main {
-  max-width: 1280px;
+  width: var(--main-width, 100%);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -100,6 +103,56 @@ button:focus-visible {
 }
 
 .d-none,
-.hide-root {
+.show-activities,
+.show-parks {
   display: none;
+}
+
+.dataTables_wrapper {
+  width: 100%;
+}
+
+.dataTables_wrapper tr td:first-of-type {
+  text-align: left;
+}
+
+/* .dataTables_wrapper tr td:last-of-type {
+  text-align: right;
+} */
+
+.dataTables_wrapper tr td {
+  cursor: pointer;
+}
+
+form {
+  padding: 8px 16px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+  form {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  form input[type="submit"] {
+    margin-top: 16px;
+  }
+  .form-group {
+    display: contents;
+  }
+}
+
+.form-group * {
+  margin-right: 8px;
+}
+
+.back-link {
+  position: absolute;
+  width: var(--main-width, 100%);
+  top: 3rem;
+  text-align: left;
 }

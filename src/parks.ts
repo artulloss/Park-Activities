@@ -13,7 +13,8 @@ export default (parks: Park[]) => {
         });
         parksBody.appendChild(tr);
     }
-    $('.show-parks').removeClass('show-parks');
+    $('.show-parks-table').removeClass('show-parks-table');
+    $('.loader').addClass('hide');
     // @ts-ignore
     const table = $('#parks').DataTable();
 }

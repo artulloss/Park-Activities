@@ -12,9 +12,11 @@ const parkId = url.pathname.split("/").pop();
   // If the end of the url ends in the id of a park, then we want to show that parks data in the table
   await (async () => {
     if (parkId) {
+      $('.show-parks').removeClass('show-parks');
       const { data } = await fetchEndpoint(`${activiesEndpoint}?id=${parkId}`);
       park(data[0].parks);
     } else {
+      $('.show-activities').removeClass('show-activities');
       const { data } = await fetchEndpoint(activiesEndpoint);
       activities(data);
     }

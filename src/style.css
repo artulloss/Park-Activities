@@ -104,7 +104,9 @@ button:focus-visible {
 
 .d-none,
 .show-activities,
-.show-parks {
+.show-parks,
+.show-activities-table,
+.show-parks-table {
   display: none;
 }
 
@@ -126,7 +128,7 @@ button:focus-visible {
 
 form {
   padding: 8px 16px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -155,4 +157,34 @@ form {
   width: var(--main-width, 100%);
   top: 3rem;
   text-align: left;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  animation: roll 1s ease-in-out infinite alternate;
+  transition: opacity 0.25s;
+  opacity: 1;
+}
+.loader.hide {
+  opacity: 0;
+}
+.loader:after{
+  content:"";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 5px solid ;
+  border-color: #ff3d00 transparent;
+}
+@keyframes roll {
+  0% {
+    transform: translateX(-150%) rotate(0deg) ;
+  }
+  100% {
+    transform:  translateX(150%) rotate(360deg);
+  }
 }

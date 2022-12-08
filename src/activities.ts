@@ -24,7 +24,8 @@ export default (activities: Activity[]) => {
   $('#activities').on('click', 'tbody tr', function() {
     window.location.href = `/${this.dataset.id}`;
   });
-  $('.show-activities').removeClass('show-activities');
+  $('.show-activities-table').removeClass('show-activities-table');
+  $('.loader').addClass('hide');
 }
 
 function getStatesSet(parks: Park[]) {

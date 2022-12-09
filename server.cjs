@@ -4,8 +4,6 @@ const fs = require("fs");
 const path = require("path");
 const PORT = 8000;
 
-const isTest = process.env.NODE_ENV === "test";
-
 const root_url = "https://developer.nps.gov/api/v1";
 const api_key = process.env.API_KEY;
 
@@ -36,7 +34,7 @@ async function createServer(
 	} else { // Otherwise, add the api key with an ampersand
 		url += "&api_key=" + api_key;
 	}
-	console.log(url);
+	// console.log(url);
 	const response = await fetch(url);
 	try {
 		const data = await response.json();
@@ -51,12 +49,11 @@ async function createServer(
    */
   let vite;
   if (isProd) {
-    TODO: app.use(require("compression")());
     app.use(express.static(resolve("./dist")));
   } else {
     vite = await require("vite").createServer({
       root,
-      logLevel: isTest ? "error" : "info",
+      logLevel: "info",
       server: {
         middlewareMode: true,
         watch: {
@@ -75,7 +72,7 @@ async function createServer(
     const url = req.originalUrl;
 
     const template = fs.readFileSync(
-      resolve(isProd ? "./dist/index.js" : "./index.html"),
+      resolve(isProd ? "./dist/index.html" : "./index.html"),
       "utf-8"
     );
 
@@ -85,13 +82,11 @@ async function createServer(
   return { app, vite };
 }
 
-if (!isTest) {
-  createServer().then(({ app }) => {
-    app.listen(PORT, () => {
-      console.log(`Listening on http://localhost:${PORT}`);
-    });
+createServer().then(({ app }) => {
+  app.listen(PORT, () => {
+    console.log(`Listening on http://localhost:${PORT}`);
   });
-}
+});
 
 // for test use
 exports.createServer = createServer;

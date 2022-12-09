@@ -13,7 +13,9 @@
   <body>
     <main>
       <h1 class="show-activities">Activities</h1>
-      <a class="show-parks back-link" href="/">Back</a>
+      <p class="show-parks back-link">
+        <a href="/">Back</a>
+      </p>
       <h1 class="show-parks">Parks</h1>
       <form id="refreshForm" class="show-activities">
         <div class="form-group">
@@ -30,7 +32,7 @@
         </div>
         <div class="form-group">
           <label for="start">Start</label>
-          <input type="number" name="start" id="start" min="1" />
+          <input type="number" name="start" id="start" min="0" />
         </div>
         <input type="submit" value="Refresh" />
       </form>

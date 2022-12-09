@@ -4,7 +4,7 @@ Prompt
 
 The final exam programming assignment will focus on creating a web “application” (interface) that will provide a user the ability to query an API. Your application will need to implement the following requirements:
 
-Usage of a web API approved per the Final Exam Proposal assignment. I suggest that you pick a well-documented API that
+- Usage of a web API approved per the Final Exam Proposal assignment. I suggest that you pick a well-documented API that
 supports a JSON data format for easier JavaScript consumption.
 - At least one web page that provides
 a search field that a user can enter values to search for items in the API
@@ -23,3 +23,26 @@ with a dialog/page/dynamic section of detailed information of the particular ite
   - Clean code (usage of let/const for variable declarations, good naming, brief comments, etc.). Remember - less code is more! I should be able to quickly discern the intent of functions and variables by their names.
   - Your solution must _work_ to avoid a major deduction.
 
+To Run
+
+# Dev
+
+npm run dev
+
+# Production
+
+npm run build
+
+npm run serve
+
+# Using the form to call the API
+
+Search works on IDs of the activities, so for example
+
+7CE6E935-F839-4FEC-A63E-052B1DEF39D2
+
+brings back biking
+
+Limit changes the max amount of results returned. This is validated to not be higher than the max amount of results returned by the API.
+
+Start changes where the limit starts, it's zero indexed. This is validated to not be higher than the max amount of results returned by the API and the limit.

@@ -23,13 +23,15 @@ with a dialog/page/dynamic section of detailed information of the particular ite
   - Clean code (usage of let/const for variable declarations, good naming, brief comments, etc.). Remember - less code is more! I should be able to quickly discern the intent of functions and variables by their names.
   - Your solution must _work_ to avoid a major deduction.
 
-To Run
+# To Run
 
-# Dev
+npm install
+
+## Dev
 
 npm run dev
 
-# Production
+## Production
 
 npm run build
 
